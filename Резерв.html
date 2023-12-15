@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация о спутнике SMART-1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-image: url('1663426247_36-mykaleidoscope-ru-p-otkritka-kosmos-oboi-40.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #search-container {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        #search {
+            width: 20%;
+            padding: 10px;
+        }
+
+        #search-button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #space-links {
+            text-align: right;
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+
+        #space-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #blue;
+            font-weight: bold;
+        }
+
+        #satellite-table {
+            width: 50%;
+            margin: 2 auto;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background: linear-gradient(to bottom right, #2e4d9d, #9b59b6);
+            color: #C0C0C0;
+        }
+
+        #satellite-table, th, td {
+            border: 1px solid #fff;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+
+            #mission-info {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>SMART-1</h1>
+
+    <div id="search-container">
+        <input type="text" id="search" placeholder="Что нибудь ещё?">
+        <button id="search-button" onclick="search()">Найти</button>
+    </div>
+
+    <div id="space-links">
+        <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D0%BC%D0%BE%D1%81" target="_blank">Космос</a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA" target="_blank">Спутники</a>
+        <a href="https://ru.wikipedia.org/wiki/SMART-1" target="_blank">SMART-1</a>
+
+    </div>
+
+    <div id="mission-info">
+
+    <p>SMART-1 (Small Mission for Advanced Research in Technology-1) — это космический аппарат, разработанный Европейским космическим агентством (ESA). SMART-1 был первым космическим аппаратом, который использовал технологию ионного двигателя для передвижения в космосе.</p> 
+
+    <p>SMART-1 был запущен 27 сентября 2003 года и достиг луны в ноябре 2004 года. Главной целью миссии было изучение Луны, включая ее состав, структуру и историю формирования. Аппарат также тестировал новые технологии и методы, такие как использование ионного двигателя для маневрирования в космосе.</p>
+
+    <p>SMART-1 пробыл около трех лет в орбите Луны, собирая данные и отправляя их на Землю. Миссия завершилась в сентябре 2006 года, когда аппарат упал на поверхность Луны в районе Камень Судьбы. Миссия SMART-1 внесла значительный вклад в наше понимание Луны и дала возможность протестировать новые технологии, которые впоследствии использовались в других космических миссиях.</p>
+    
+    </div>
+
+    <table id="satellite-table">
+        <tr>
+            <th>Характеристика</th>
+            <th>Значение</th>
+        </tr>
+        <tr>
+            <td>Название</td>
+            <td>SMART-1</td>
+        </tr>
+        <tr>
+            <td>Дата запуска</td>
+            <td>27 сентября 2003 года</td>
+        </tr>
+        <tr>
+            <td>Масса</td>
+            <td>367 кг</td>
+        </tr>
+        <tr>
+            <td>Размеры</td>
+            <td>Длина около 1.3 метра, ширина около 1.2 метра, высота около 0.43 метра.</td>
+        </tr>
+        <tr>
+           <td>Энергоснабжение</td>
+           <td>SMART-1 оснащен солнечными батареями для генерации электроэнергии</td>
+        </tr>
+
+    </table>
+
+    <script>
+        function search() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("satellite-table");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+    <footer>
+        <p style="text-align: center; margin-top: 30px;">&copy; 2023 Роскосмос.Практика. Все права защищены.</p>
+
+    </footer>
+</body>
+
+</html>
+
+</body>
+
+</html>
